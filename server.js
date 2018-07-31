@@ -17,12 +17,12 @@ app.get('/getNote', function (req, res) {
 
 app.post('/updateNote/:note', function (req, res) {
     console.log('Otrzymałem żądanie POST do strony głównej');
-    stringifyFile = req.params.note;
+    stringifyFile += req.params.note;
     fs.writeFile('./test.json', stringifyFile, function (err) {
         if (err) throw err;
         console.log('file updated');
     });
-    res.send('Hello POST!' + stringifyFile);
+    res.send('Hello POST!');
 });
 
 
